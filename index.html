@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Xenophobia</title>
+  </head>
+  <script>
+    /**
+     * Listen for a specific key press
+     *
+     * @param {string} key -the key to be listened
+     * @param {Function} fn - the callback
+     * @returns {(e: Event) => any}
+     *
+     * @example el.onKeyPress = getKey("g", callback);
+     */
+    const getKey = (key, fn) => (e) => e.key == key && fn(e);
+  </script>
+  <body onkeypress='getKey("space", onSpace())'>
+    <h1>La Xenophobie</h1>
+    <section class="active">
+      <h2>Qu'est ce que c'est?</h2>
+      <p>
+        La Xenophobie c'est la peur de tout ce qui est etrange d'un groupe ou
+        d'une societe. Elle est basee sur une idee d'un conflit entre
+        l'interieure et l'exterieur et cela peut se manifester en desire
+        d'eliminer la presence de certains groupes.
+      </p>
+    </section>
+    <section>
+      <h2>D'ou est ce que cela viens?</h2>
+      <p>
+        Cela viens d'une fausse conception du monde exterieur, qui souvent
+        accompagnie d'un sentiment de superiorite et conduisent les gens a la
+        discrimination elle vient aussi d'une societe qui ne familliarise jamais
+        avec l'exterieur
+      </p>
+    </section>
+    <section>
+      <h2>Ce quoi donc les consequences?</h2>
+      <p>
+        Les consequences sont d'habitude, de la missinformation, la
+        discrimination et la violation des droits de l'homme tel que le droit a
+        la propriete privee, droit a la vie et etc.
+      </p>
+    </section>
+
+    <section>
+      <h2>Quand t'est ce qu'elle a commencée?</h2>
+      <p>
+        Elle avait ete observe depuis l'egypte ancienne dans l'empire romain et
+        meme dans la grece ancienne et dans la majorite des civilisations dites
+        civilisées
+      </p>
+    </section>
+
+    <section>
+      <h2>Quoi faire pour l'eliminer?</h2>
+      <p>
+        Pour l'eliminer il faut juste celebrer les differences qui donne du sel
+        a la vie au lieu de les voir comme hostile ou en arriere. Parfois la
+        Xenophobie est juste la facade d'un probleme de racism donc rliminer
+        cela eminera aussi des traces de discrimination
+      </p>
+    </section>
+
+    <script>
+      const sections = [...document.querySelectorAll("section")];
+      const title = document.querySelector("h1");
+
+      const onSpace = () => {
+        const activeIndex = sections.findIndex((e) =>
+          e.classList.contains("active")
+        );
+        const nouveauIndex =
+          activeIndex + 1 === sections.length ? 0 : activeIndex + 1;
+
+        title.style.transform =
+          "translateX(" + (nouveauIndex / (sections.length - 1)) * 60 + "rem)";
+        document.querySelector(".active").classList.remove("active");
+        sections[nouveauIndex].classList.add("active");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nova Square";
+  background-color: beige;
+}
+
+body {
+  gap: 1rem;
+
+  max-height: 100vh;
+
+  padding: 1rem 1.6rem;
+}
+
+h1 {
+  transition: all 0.4s;
+}
+
+h2 {
+  padding-bottom: 0.4rem;
+}
+
+section {
+  position: absolute;
+  font-size: 3.5rem;
+  border-radius: 8px;
+  border: solid 3px black;
+  background: beige;
+  margin-right: 1.6rem;
+  padding: 0.8rem;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+img.right {
+  position: absolute;
+  bottom: -60%;
+  right: -20%;
+  border-radius: 8px;
+  z-index: -1000;
+  max-height: 13rem;
+}
+
+p {
+  font-family: "lora";
+}
